@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.headerImage {
+    max-width: 250px;
+}
+
+header {
+    display: flex;
+    background-color: #009fe3;
+    align-items: flex-end; /* This aligns the content at the bottom of the header */
+    position: relative;
+    padding-bottom: 10px; /* Optional: Adds some space from the bottom of the header */
+}
+
+.headerContent {
+    /* nog niks */
+}
+
+footer {
+    background-color: #009fe3;
+}
+
+nav {
+    display: flex;
+    align-items: flex-end; /* Aligns the nav buttons at the bottom of the header */
+    width: 100%; /* Ensures the nav takes up full width of the header */
+}
+
+nav a {
+    margin: 10px;
+    padding: 2px;
+    color: white;
+    text-decoration: none;
+    outline: solid white 2px;
+    border-radius: 2px;
+}
+
+.MainBody {
+    background-color: white;
+}
+
+.middencontent {
+    display: flex;
+    justify-content: center;
+}
+
+.infoding {
+    border-radius: 5px;
+    margin: 50px;
+    height: 100px;
+    max-height: 50%;
+    max-width: 75%;
+    background-color: pink;
+}
+
+.auth-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.auth-buttons a {
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    outline: solid white 2px;
+    border-radius: 2px;
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.auth-buttons a:hover {
+    background-color: white;
+    color: #009fe3;
+}
