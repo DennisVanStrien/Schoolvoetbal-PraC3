@@ -18,6 +18,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->unsignedBigInteger('team_id')->constrained()->nullable();
+            $table->enum('role', ['user', 'referee', 'admin']);
+            $table->double('currency')->default(50);
             $table->timestamps();
         });
     }

@@ -9,11 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <p>Wedstrijd schema's voor wedstrijden waar jij bent ingeschreven:<p>
-
-                        <p>Hier inladen</p>
-
-                        <a href="/">Klik hier om terug te gaan naar de hoofdpagina</a>
+                    {{ __("You're logged in!") }}
+                    <a href="/posts">Klik om naar de posts te gaan</a>
                 </div>
             </div>
         </div>

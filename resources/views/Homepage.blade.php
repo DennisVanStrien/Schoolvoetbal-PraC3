@@ -1,11 +1,9 @@
 <x-base-layout>
-        <div class="middencontent">
-            <div class="infoding">
+        <div class="middencontent flex justify-center bg-white">
+            <div class="infoding rounded-md m-[50px] h-[100px] max-h-[50%] max-w-[75%] bg-[#F399]">
             <h2>Homepage info</h2>
             <p>Info blbalablablabl</p>
-            <video width="320" height="240" loop autoplay>
-                <source src="img/minion.mp4" type="video/mp4">
-              </video>
+
         </div>
 </x-base-layout>
 
