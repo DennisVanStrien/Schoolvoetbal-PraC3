@@ -19,11 +19,18 @@ Route::get('/', function () {
     return view('Homepage');
 });
 
+Route::get('/weddenschappen', function () {
+    return view('Weddenschappen');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/teams', [TeamsController::class, 'index'])->name('teams.index');
+Route::get('/teams/create', [TeamsController::class, "create"])->name('team.create');
+Route::post('/teams/create', [TeamsController::class, "store"])->name('team.store');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

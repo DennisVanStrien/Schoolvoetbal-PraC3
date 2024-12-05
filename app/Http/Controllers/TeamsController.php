@@ -13,8 +13,15 @@ class TeamsController extends Controller
         return view('teams.index')->with('teams',$teams);
     }
 
-    public function create()
-    {
-        return view();
-    }
+    public function create(){
+        return view('teams.create');
+   }
+
+   public function store(Request $request){
+       $newTeam = new Team();
+       $newTeam->name = $request->name;
+       $newTeam->save();
+
+       return redirect()->route('teams.index');
+   }
 }
