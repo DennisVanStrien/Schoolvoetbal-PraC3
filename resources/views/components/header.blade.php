@@ -1,5 +1,5 @@
 <header class="flex bg-[#009fe3] items-end relative pb-[10px] shadow-lg">
-    <img src="../img/logo.jpg" alt="Logo" class="max-w-[250px]">
+    <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="max-w-[250px]">
     <div class="headerContent">
         <nav class="nav flex items-end w-[100%]">
             <a href="/" class="m-[10px] text-white text-sm uppercase tracking-wide px-4 py-2 rounded-md bg-[#007bb3] hover:bg-[#005f8a] hover:scale-105 transition duration-300 ease-in-out">

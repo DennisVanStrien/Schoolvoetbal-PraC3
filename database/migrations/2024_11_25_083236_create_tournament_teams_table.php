@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('tournament_teams', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tournament_id')->constrained();
-            $table->unsignedBigInteger('team_id')->constrained();
+            $table->unsignedBigInteger('tournament_id');
+            $table->unsignedBigInteger('team_id');
             $table->timestamps();
         });
     }

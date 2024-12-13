@@ -7,11 +7,13 @@
             <div class="border rounded p-2 text-center">
                 <p>Team naam: {{$team->name}}</p>
                 <p>Team id: {{$team->id}}</p>
-                <a href="#" class="underline text-sm text-gray-600">Klik om team te bekijken</a>
+                <a href="{{ route('teams.goToEditPage', $team->id)}}" class="underline text-sm text-gray-600">Klik om team te bekijken</a>
             </div>
         @endforeach
     </div>
-    <div class="flex justify-center mt-4">
-        <a href="/teams/create" class="text-blue-500 underline">Maak een nieuw team aan</a>
-    </div>
+    @auth
+        <div class="flex justify-center mt-4">
+            <a href="/teams/create" class="text-blue-500 underline">Maak een nieuw team aan</a>
+        </div>
+    @endauth
 </x-base-layout>

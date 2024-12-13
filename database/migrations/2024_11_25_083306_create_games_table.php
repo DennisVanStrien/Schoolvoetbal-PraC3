@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tournament_id')->constrained();
-            $table->unsignedBigInteger('team_1')->constrained();
-            $table->unsignedBigInteger('team_2')->constrained();
+            $table->unsignedBigInteger('tournament_id');
+            $table->unsignedBigInteger('team_1');
+            $table->unsignedBigInteger('team_2');
             $table->unsignedInteger('team_1_score');
             $table->unsignedInteger('team_2_score');
             $table->timestamps();

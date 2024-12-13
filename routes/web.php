@@ -31,6 +31,15 @@ Route::get('/teams', [TeamsController::class, 'index'])->name('teams.index');
 Route::get('/teams/create', [TeamsController::class, "create"])->name('team.create');
 Route::post('/teams/create', [TeamsController::class, "store"])->name('team.store');
 
+Route::get('/teams/edit/{team}', [TeamsController::class, "goToEditPage"])->name('teams.goToEditPage');
+Route::post('/teams/edit/{team}/addPlayers', [TeamsController::class, 'addPlayers'])->name('teams.addPlayers');
+Route::post('/teams/edit/{team}/DeletePlayers', [TeamsController::class, 'deletePlayer'])->name('teams.deletePlayer');
+Route::delete('/teams/edit/{team}', [TeamsController::class, 'destroy'])->name('teams.destroy');
+
+
+
+
+Route::get('/teams/toevoegen', [TeamsController::class, 'indexTeam'])->name('teams.indexTeams');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
