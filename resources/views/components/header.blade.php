@@ -1,19 +1,34 @@
 <header class="flex bg-[#009fe3] items-end relative pb-[10px] shadow-lg">
     <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="max-w-[250px]">
     <div class="headerContent">
-        <nav class="nav flex items-end w-[100%]">
+        <nav class="nav flex items-center w-[100%]"> <!-- Gebruik items-center voor verticale uitlijning -->
             <a href="/" class="m-[10px] text-white text-sm uppercase tracking-wide px-4 py-2 rounded-md bg-[#007bb3] hover:bg-[#005f8a] hover:scale-105 transition duration-300 ease-in-out">
                 Home
             </a>
             <a href="/teams" class="m-[10px] text-white text-sm uppercase tracking-wide px-4 py-2 rounded-md bg-[#007bb3] hover:bg-[#005f8a] hover:scale-105 transition duration-300 ease-in-out">
                 Teams
             </a>
-            <a href="/dashboard" class="m-[10px] text-white text-sm uppercase tracking-wide px-4 py-2 rounded-md bg-[#007bb3] hover:bg-[#005f8a] hover:scale-105 transition duration-300 ease-in-out">
+            <a href="{{route('dashboard.index')}}" class="m-[10px] text-white text-sm uppercase tracking-wide px-4 py-2 rounded-md bg-[#007bb3] hover:bg-[#005f8a] hover:scale-105 transition duration-300 ease-in-out">
                 Dashboard
             </a>
-            <a href="/" class="m-[10px] text-white text-sm uppercase tracking-wide px-4 py-2 rounded-md bg-[#007bb3] hover:bg-[#005f8a] hover:scale-105 transition duration-300 ease-in-out">
-                Wedstrijden
-            </a>
+
+            <!-- Toernooi Dropdown -->
+            <div class="relative group">
+                <a href="#" class="m-[10px] text-white text-sm uppercase tracking-wide px-4 py-2 rounded-md bg-[#007bb3] hover:bg-[#005f8a] hover:scale-105 transition duration-300 ease-in-out">
+                    Toernooien <i class="fa-solid fa-caret-down"></i>
+                </a>
+
+                <!-- Dropdown Menu -->
+                <div class="absolute left-0 hidden group-hover:block w-[150px] bg-[#007bb3] border-[#007bb3] text-white border-2 rounded-md shadow-lg">
+                    <a href="{{route('goToTournamentCreate')}}" class="block px-4 py-2 text-white text-sm hover:bg-[#005f8a] transition duration-300 ease-in-out">
+                        Genereer Toernooi
+                    </a>
+                    <a href="{{route('tournaments.index')}}" class="block px-4 py-2 text-white text-sm hover:bg-[#005f8a] transition duration-300 ease-in-out">
+                        Bekijk Toernooien
+                    </a>
+                </div>
+            </div>
+
             <a href="/weddenschappen" class="m-[10px] text-white text-sm uppercase tracking-wide px-4 py-2 rounded-md bg-[#007bb3] hover:bg-[#005f8a] hover:scale-105 transition duration-300 ease-in-out">
                 Weddenschappen
             </a>

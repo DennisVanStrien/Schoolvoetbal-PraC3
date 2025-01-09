@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->unsignedInteger('max_teams');
-            $table->dateTime('started');
+            $table->dateTime('started')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamps();
         });
     }

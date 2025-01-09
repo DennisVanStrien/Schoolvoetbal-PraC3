@@ -9,8 +9,13 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             @if(auth()->user()->role === 'user' || auth()->user()->role === 'referee')
                 <div class="bg-blue-500 text-white p-6 mt-4 rounded-lg shadow-sm">
-                    <h3 class="text-lg font-semibold">Welkom Gebruiker!</h3>
-                    <p>Nog niks</p>
+                    <h3 class="text-lg font-semibold">Welkom {{Auth::user()->name}}</h3>
+                    @if (Auth::user()->team)
+                        <p>Jouw team: {{ Auth::user()->team->name }} (ID: {{ Auth::user()->team_id }})</p>
+                    @else
+                        <p>Je hebt nog geen team, ga naar de teams pagina om er een aan te maken.</p>
+                    @endif
+
                 </div>
             @elseif(auth()->user()->role === 'admin')
                 <div class="bg-green-500 text-white p-6 mt-4 rounded-lg shadow-sm">

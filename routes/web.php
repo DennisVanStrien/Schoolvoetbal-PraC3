@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\TournamentController;
+use App\Models\Tournament;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +26,7 @@ Route::get('/weddenschappen', function () {
     return view('Weddenschappen');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'goToDashboard'])->middleware(['auth', 'verified'])->name('dashboard.index');
 
 Route::get('/teams', [TeamsController::class, 'index'])->name('teams.index');
 Route::get('/teams/create', [TeamsController::class, "create"])->name('team.create');
@@ -35,6 +36,12 @@ Route::get('/teams/edit/{team}', [TeamsController::class, "goToEditPage"])->name
 Route::post('/teams/edit/{team}/addPlayers', [TeamsController::class, 'addPlayers'])->name('teams.addPlayers');
 Route::post('/teams/edit/{team}/DeletePlayers', [TeamsController::class, 'deletePlayer'])->name('teams.deletePlayer');
 Route::delete('/teams/edit/{team}', [TeamsController::class, 'destroy'])->name('teams.destroy');
+
+Route::get('/tournaments', [TournamentController::class, 'indexTournament'])->name('tournaments.index');
+Route::get('/tournaments/create', [TournamentController::class, "goToCreatePage"])->name('goToTournamentCreate');
+Route::post('/tournaments/create', [TournamentController::class, "createTournament"])->name('tournament.create');
+Route::post('/tournaments/{tournament}/join', [TournamentController::class, 'joinTournament'])->name('tournament.team.create');
+
 
 
 
