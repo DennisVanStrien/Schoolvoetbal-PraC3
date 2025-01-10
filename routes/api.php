@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/user', [ApiController::class, 'users']);
+Route::get('/teams', [ApiController::class, 'teams']);
+Route::get('/tournaments', [ApiController::class, 'tournaments']);
+Route::get('/games', [ApiController::class, 'games']);
+Route::get('/tournamentteams', [ApiController::class, 'tournamentsTeams']);
 
 Route::middleware('auth:sanctum')->get('/users', function (Request $request) {
     return $request->user();

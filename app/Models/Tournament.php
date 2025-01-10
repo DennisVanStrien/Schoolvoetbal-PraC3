@@ -10,4 +10,12 @@ class Tournament extends Model
 {
     use HasFactory;
 
+    public function games()
+    {
+        return $this->hasMany(Game::class);
+    }
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class, 'tournament_teams', 'tournament_id', 'team_id');
+    }
 }

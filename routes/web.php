@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\TournamentController;
 use App\Models\Tournament;
+use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,11 +43,19 @@ Route::get('/tournaments/create', [TournamentController::class, "goToCreatePage"
 Route::post('/tournaments/create', [TournamentController::class, "createTournament"])->name('tournament.create');
 Route::post('/tournaments/{tournament}/join', [TournamentController::class, 'joinTournament'])->name('tournament.team.create');
 
+Route::get('/tournament/edit/{tournament}', [TournamentController::class, "goToEditPage"])->name('tournament.goToEditPage');
+Route::delete('/tournament/edit/{tournament}', [TournamentController::class, 'destroy'])->name('tournament.destroy');
+Route::put('/tournament/{tournament}', [TournamentController::class, 'ChangeStartDate'])->name('tournament.update');
 
-
-
+Route::post('/tournament/{tournament}/generate-schedule', [TournamentController::class, 'generateSchedule'])->name('tournament.schedule.generate');
 
 Route::get('/teams/toevoegen', [TeamsController::class, 'indexTeam'])->name('teams.indexTeams');
+
+Route::get('/tournaments/{tournament}/games', [TournamentController::class, 'showGames'])->name('tournaments.showGames');
+
+Route::get('games/{game}/edit', [GameController::class, 'edit'])->name('games.edit');
+Route::put('games/{game}', [GameController::class, 'update'])->name('games.update');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
