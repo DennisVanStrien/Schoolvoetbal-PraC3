@@ -4,7 +4,7 @@
             <h2 class="font-bold text-lg justify-center flex">Weddenschappen</h2>
             <p>Om te kunnen wedden op wedstrijden moet je onze applicatie downloaden</p>
             <div>
-                <a href="../img/hawk.mp4" download class="inline-block text-center py-1 px-3 text-white rounded-md bg-[#007bb3]">
+                <a href="#" download class="inline-block text-center py-1 px-3 text-white rounded-md bg-[#007bb3]">
                     Download <i class="fa-solid fa-down-long"></i>
                 </a>
             </div>
